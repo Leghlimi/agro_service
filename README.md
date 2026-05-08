@@ -4,46 +4,6 @@ Plataforma de servicios agrícolas para la contratación y agendado de citas.
 
 ---
 
-## 🚀 Puesta en marcha (paso a paso)
-
-### 1. Crear y activar el entorno virtual
-```bash
-python -m venv venv
-source venv/bin/activate        # Linux/Mac
-venv\Scripts\activate           # Windows
-```
-
-### 2. Instalar dependencias
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Aplicar las migraciones (crea las tablas en la base de datos)
-```bash
-python manage.py migrate
-```
-
-### 4. Cargar los servicios iniciales
-```bash
-python manage.py loaddata servicios/fixtures/servicios_iniciales.json
-```
-
-### 5. Crear un superusuario para el panel de administración
-```bash
-python manage.py createsuperuser
-```
-
-### 6. Arrancar el servidor de desarrollo
-```bash
-python manage.py runserver
-```
-
-Abre el navegador en: http://127.0.0.1:8000
-
-Panel de administración: http://127.0.0.1:8000/admin
-
----
-
 ## 📁 Estructura del proyecto
 
 ```
