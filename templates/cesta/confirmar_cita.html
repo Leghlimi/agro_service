@@ -1,0 +1,37 @@
+{% extends "base/base.html" %}
+
+{% block titulo %}Confirmar cita · Agro Service{% endblock %}
+
+{% block contenido %}
+<h1>Agendar cita</h1>
+
+<section class="resumen-cesta">
+    <h2>Servicios seleccionados</h2>
+    <ul>
+        {% for servicio in servicios %}
+        <li>{{ servicio.nombre }} — {{ servicio.precio_por_kg }}€/kg</li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section class="formulario-cita">
+    <h2>Tus datos</h2>
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="campo">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                    <span class="error">{{ field.errors|join:", " }}</span>
+                {% endif %}
+                {% if field.help_text %}
+                    <small>{{ field.help_text }}</small>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn-primario">Confirmar cita</button>
+        <a href="{% url 'ver_cesta' %}">← Volver a la cesta</a>
+    </form>
+</section>
+{% endblock %}

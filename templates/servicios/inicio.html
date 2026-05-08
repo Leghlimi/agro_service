@@ -1,0 +1,25 @@
+{% extends "base/base.html" %}
+
+{% block titulo %}Inicio · Agro Service{% endblock %}
+
+{% block contenido %}
+<section class="hero">
+    <h1>Servicios agrícolas para tu cosecha</h1>
+    <p>Especialistas en sandía. Rápidos, fiables y con experiencia en el campo.</p>
+    <a href="{% url 'catalogo' %}" class="btn-primario">Ver servicios</a>
+</section>
+
+<section class="servicios-destacados">
+    <h2>Nuestros servicios</h2>
+    <div class="grid-servicios">
+        {% for servicio in servicios %}
+        <div class="card-servicio">
+            <h3>{{ servicio.nombre }}</h3>
+            <p>{{ servicio.descripcion }}</p>
+            <p class="precio">{{ servicio.precio_por_kg }}€/kg</p>
+            <a href="{% url 'añadir_a_cesta' servicio.id %}" class="btn-secundario">Añadir a cesta</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

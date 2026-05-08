@@ -1,0 +1,35 @@
+[
+  {
+    "model": "servicios.servicio",
+    "pk": 1,
+    "fields": {
+      "nombre": "Sacar sandías con torillo",
+      "descripcion": "Servicio de extracción de sandías del campo utilizando torillo mecánico. Precio por kilogramo cosechado.",
+      "precio_por_kg": "0.0080",
+      "categoria": "sandia",
+      "activo": true
+    }
+  },
+  {
+    "model": "servicios.servicio",
+    "pk": 2,
+    "fields": {
+      "nombre": "Personal para cortar sandías",
+      "descripcion": "Mano de obra especializada para el corte y recolección de sandías. Precio por kilogramo cortado.",
+      "precio_por_kg": "0.0190",
+      "categoria": "sandia",
+      "activo": true
+    }
+  },
+  {
+    "model": "servicios.servicio",
+    "pk": 3,
+    "fields": {
+      "nombre": "Servicio completo de corte y saca",
+      "descripcion": "Paquete completo que incluye corte de sandías y extracción con torillo. La solución integral para tu cosecha.",
+      "precio_por_kg": "0.0260",
+      "categoria": "sandia",
+      "activo": true
+    }
+  }
+]

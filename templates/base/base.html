@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Agro Service{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% block css_extra %}{% endblock %}
+</head>
+<body>
+
+<!-- ===== NAVEGACIÓN ===== -->
+<nav>
+    {% load static %}
+    <a href="{% url 'inicio' %}">
+        <img src="{% static 'img/logo.jpeg' %}" alt="Agro Service" height="40">
+    </a>
+    <ul>
+        <li><a href="{% url 'inicio' %}">Inicio</a></li>
+        <li><a href="{% url 'catalogo' %}">Servicios</a></li>
+        <li><a href="{% url 'contacto' %}">Contacto</a></li>
+        <li>
+            <a href="{% url 'ver_cesta' %}">
+                🛒 Cesta
+                {% if cesta_count > 0 %}
+                    <span class="badge">{{ cesta_count }}</span>
+                {% endif %}
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- ===== MENSAJES FLASH ===== -->
+{% if messages %}
+    <div class="mensajes">
+        {% for message in messages %}
+            <div class="mensaje {{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<!-- ===== CONTENIDO PRINCIPAL ===== -->
+<main>
+    {% block contenido %}{% endblock %}
+</main>
+
+<!-- ===== PIE DE PÁGINA ===== -->
+<footer>
+    <p>&copy; 2025 Agro Service · Servicios agrícolas de calidad</p>
+</footer>
+
+{% block js_extra %}{% endblock %}
+</body>
+</html>

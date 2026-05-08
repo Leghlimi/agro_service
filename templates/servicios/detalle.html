@@ -1,0 +1,14 @@
+{% extends "base/base.html" %}
+
+{% block titulo %}{{ servicio.nombre }} · Agro Service{% endblock %}
+
+{% block contenido %}
+<article class="detalle-servicio">
+    <h1>{{ servicio.nombre }}</h1>
+    <p>{{ servicio.descripcion }}</p>
+    <p class="precio">Precio: <strong>{{ servicio.precio_por_kg }}€/kg</strong></p>
+    <p><em>El precio final se calcula tras el trabajo, en base al peso real cosechado.</em></p>
+    <a href="{% url 'añadir_a_cesta' servicio.id %}" class="btn-primario">Añadir a cesta</a>
+    <a href="{% url 'catalogo' %}">← Volver al catálogo</a>
+</article>
+{% endblock %}

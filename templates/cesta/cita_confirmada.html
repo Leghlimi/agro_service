@@ -1,0 +1,13 @@
+{% extends "base/base.html" %}
+
+{% block titulo %}Cita confirmada · Agro Service{% endblock %}
+
+{% block contenido %}
+<section class="confirmacion">
+    <h1>✅ ¡Cita agendada!</h1>
+    <p>Hemos recibido tu solicitud para el <strong>{{ cita.fecha_deseada|date:"d/m/Y" }}</strong>.</p>
+    <p>Nos pondremos en contacto contigo en el teléfono <strong>{{ cita.telefono_cliente }}</strong> para confirmar.</p>
+    <p><em>Recuerda: el precio final se ajustará tras el trabajo en base a los kilos reales.</em></p>
+    <a href="{% url 'inicio' %}" class="btn-primario">Volver al inicio</a>
+</section>
+{% endblock %}

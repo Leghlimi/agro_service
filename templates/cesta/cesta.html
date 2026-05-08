@@ -1,0 +1,24 @@
+{% extends "base/base.html" %}
+
+{% block titulo %}Mi cesta · Agro Service{% endblock %}
+
+{% block contenido %}
+<h1>Tu cesta</h1>
+
+{% if servicios %}
+    <ul class="lista-cesta">
+        {% for servicio in servicios %}
+        <li>
+            <strong>{{ servicio.nombre }}</strong>
+            — {{ servicio.precio_por_kg }}€/kg
+            <a href="{% url 'quitar_de_cesta' servicio.id %}" class="btn-eliminar">Quitar</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <p><em>El precio final se calculará tras el trabajo según los kilos reales.</em></p>
+    <a href="{% url 'confirmar_cita' %}" class="btn-primario">Agendar cita →</a>
+{% else %}
+    <p>Tu cesta está vacía.</p>
+    <a href="{% url 'catalogo' %}">Ver servicios disponibles</a>
+{% endif %}
+{% endblock %}

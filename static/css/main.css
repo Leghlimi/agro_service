@@ -1,0 +1,66 @@
+/* static/css/main.css — Estilos base de Agro Service */
+
+/* Variables de color — cambia aquí y se aplica en toda la web */
+:root {
+    --verde: #2d6a2d;
+    --verde-claro: #e8f5e9;
+    --naranja: #e65c00;
+    --texto: #222;
+    --fondo: #fafafa;
+    --borde: #ddd;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Georgia, serif; color: var(--texto); background: var(--fondo); }
+
+/* Nav */
+nav { background: var(--verde); padding: 1rem 2rem; display: flex; align-items: center; gap: 2rem; }
+nav a { color: white; text-decoration: none; }
+nav ul { list-style: none; display: flex; gap: 1.5rem; margin-left: auto; }
+.badge { background: var(--naranja); color: white; border-radius: 50%; padding: 0 6px; font-size: 0.75rem; }
+
+/* Mensajes flash */
+.mensajes { padding: 1rem 2rem; }
+.mensaje { padding: 0.75rem 1rem; border-radius: 4px; margin-bottom: 0.5rem; }
+.mensaje.success { background: #d4edda; border: 1px solid #c3e6cb; }
+.mensaje.error   { background: #f8d7da; border: 1px solid #f5c6cb; }
+.mensaje.info    { background: #d1ecf1; border: 1px solid #bee5eb; }
+.mensaje.warning { background: #fff3cd; border: 1px solid #ffeeba; }
+
+/* Main y footer */
+main { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+footer { text-align: center; padding: 2rem; color: #666; border-top: 1px solid var(--borde); margin-top: 3rem; }
+
+/* Botones */
+.btn-primario { background: var(--verde); color: white; padding: 0.6rem 1.4rem; border-radius: 4px; text-decoration: none; display: inline-block; border: none; cursor: pointer; }
+.btn-secundario { background: white; color: var(--verde); padding: 0.6rem 1.4rem; border-radius: 4px; text-decoration: none; border: 1px solid var(--verde); display: inline-block; }
+.btn-eliminar { color: #c0392b; text-decoration: none; margin-left: 1rem; font-size: 0.9rem; }
+
+/* Grid de servicios */
+.grid-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+.card-servicio { background: white; border: 1px solid var(--borde); border-radius: 8px; padding: 1.5rem; }
+.card-servicio h3 { color: var(--verde); margin-bottom: 0.5rem; }
+.precio { font-size: 1.2rem; font-weight: bold; color: var(--naranja); margin: 0.75rem 0; }
+.acciones { display: flex; gap: 1rem; align-items: center; margin-top: 1rem; }
+
+/* Hero */
+.hero { text-align: center; padding: 3rem 1rem; background: var(--verde-claro); border-radius: 8px; margin-bottom: 2rem; }
+.hero h1 { font-size: 2rem; color: var(--verde); }
+.hero p { margin: 1rem 0; font-size: 1.1rem; }
+
+/* Formularios */
+.campo { margin-bottom: 1.2rem; }
+.campo label { display: block; margin-bottom: 0.3rem; font-weight: bold; }
+.form-control { width: 100%; padding: 0.5rem; border: 1px solid var(--borde); border-radius: 4px; font-size: 1rem; }
+.error { color: #c0392b; font-size: 0.85rem; }
+
+/* Cesta */
+.lista-cesta { list-style: none; }
+.lista-cesta li { padding: 0.75rem 0; border-bottom: 1px solid var(--borde); }
+
+/* Secciones formulario cita */
+.resumen-cesta, .formulario-cita { background: white; border: 1px solid var(--borde); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
+
+/* Confirmación */
+.confirmacion { text-align: center; padding: 3rem 1rem; }
+.confirmacion h1 { font-size: 2rem; color: var(--verde); margin-bottom: 1rem; }
